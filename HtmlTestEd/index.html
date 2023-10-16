@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>加減計算器</title>
+    <script src="calculate.js" defer></script>
+</head>
+
+<body>
+
+    <h2>加減計算器</h2>
+
+    <label for="num1">數字1：</label>
+    <input type="text" id="num1" required>
+    <br>
+    <label for="num2">數字2：</label>
+    <input type="text" id="num2" required>
+    <br>
+    <button onclick="calculate('add')">加法</button>
+    <button onclick="calculate('subtract')">減法</button>
+
+    <p>計算結果：<span id="result"></span></p>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>加減計算器</title>
+</head>
+
+<body>
+
+    <h2>加減計算器</h2>
+
+    <label for="num1">數字1：</label>
+    <input type="text" id="num1" required>
+    <br>
+    <label for="num2">數字2：</label>
+    <input type="text" id="num2" required>
+    <br>
+    <button onclick="calculate('add')">加法</button>
+    <button onclick="calculate('subtract')">減法</button>
+
+    <p>計算結果：<span id="result"></span></p>
+
+    <script>
+        function calculate(operator) {
+            // 取得輸入的數字
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+
+            // 進行計算
+            var result;
+            if (operator === 'add') {
+                result = num1 + num2;
+            } else if (operator === 'subtract') {
+                result = num1 - num2;
+            } else {
+                result = '未知操作';
+            }
+
+            // 顯示計算結果
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+
+</body>
+
+</html>
