@@ -41,8 +41,6 @@
         <input type="submit" value="計算標準差" name="operation">
     </form>
 
-    
-
     <%-- JSP Code Area --%>
     <%
         // Check if the form is submitted
@@ -70,7 +68,6 @@
             double populationVariance = b / 5;
             double sampleStandardDeviation = Math.sqrt(sampleVariance);
             double PopulationStandardDeviation = Math.sqrt(populationVariance);
-            
             
         
     %>

@@ -46,7 +46,7 @@
     <%-- Check if the form is submitted --%>
 
     <%-- Define the findMedian method --%>
-    <!--
+    <%--
     <%!
         static double findMedian(double[] arr) {
         int length = arr.length;
@@ -64,7 +64,8 @@
     }
 
     %>
-    -->
+    
+    --%>
 
     <%
         if (request.getMethod().equalsIgnoreCase("post")) {

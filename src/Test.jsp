@@ -1,39 +1,28 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="java.text.Decimal
+ %>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中位數計算器</title>
+    <meta charset="utf-8">
+    <title>小數點取位示例</title>
 </head>
+
 <body>
 
-<%! 
-    // 聲明全域函式
-    double calculateMedian(double[] arr) {
-        int length = arr.length;
-        double median;
+    <%
+        double originalNumber = 15.6789;
 
-        if (length % 2 == 0) {
-            double middle1 = arr[length / 2 - 1];
-            double middle2 = arr[length / 2];
-            median = (middle1 + middle2) / 2;
-        } else {
-            median = arr[length / 2];
-        }
+        // 使用 DecimalFormat 取得小數點後兩位
+        DecimalFormat decimal
+DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        String formattedNumber = decimalFormat.format(originalNumber);
 
-        return median;
-    }
-%>
-
-<%
-    // 在JSP中使用函式
-    double[] numbers = {5, 2, 9, 1, 7};
-    double median = calculateMedian(numbers);
-%>
-
-<p>原始陣列： [<%= numbers[0] %>, <%= numbers[1] %>, <%= numbers[2] %>, <%= numbers[3] %>, <%= numbers[4] %>]</p>
-<p>中位數： <%= median %></p>
+        out.print("<p>原始數字：" + originalNumber + "</p>");
+        out.print("<p>小數點取位：" + formattedNumber + "</p>");
+    %>
 
 </body>
+
 </html>

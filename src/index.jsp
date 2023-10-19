@@ -87,16 +87,11 @@
         </tr>
         <tr>
             <td>
-                <a href="StandardDeviation.jsp" target="_self">標準差</a>
+                <a href="StandardDeviation.jsp" target="_self">標準差 / 變異數</a>
             </td>
             
         </tr>
-        <tr>
-            <td>
-                <a href="PopulationStandardDeviation.jsp" target="_self">變異數</a>
-            </td>
-            
-        </tr>
+        
         <tr>
             <td>
                 <a href="CV.jsp" target="_self">變異係數(CV)</a>
@@ -124,6 +119,13 @@
         <tr>
             <td>
                 <a href="r.jsp" target="_self">相關係數(r)</a>
+            </td>
+            
+        </tr>
+
+        <tr>
+            <td>
+                <a href="chebyshev.jsp" target="_self">契理雪夫定理 - 資料分配預測</a>
             </td>
             
         </tr>
