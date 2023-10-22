@@ -14,6 +14,9 @@
         h3 {
             text-align: center;
         }
+        body{
+            text-align: center;
+        }
         
     </style>
 </head>
@@ -38,34 +41,11 @@
         <label for="num5">數據5</label>
         <input type="text" name="num5" required>
         <br>
+        <br>
         <input type="submit" value="找出中位數" name="operation">
     </form>
 
     <%-- JSP Code Area --%>
-
-    <%-- Check if the form is submitted --%>
-
-    <%-- Define the findMedian method --%>
-    <%--
-    <%!
-        static double findMedian(double[] arr) {
-        int length = arr.length;
-        double median;
-
-        if (length % 2 == 0) {
-            double middle1 = arr[length / 2 - 1];
-            double middle2 = arr[length / 2];
-            median = (double) (middle1 + middle2) / 2;
-        } else {
-            median = arr[length / 2];
-        }
-
-        return median;
-    }
-
-    %>
-    
-    --%>
 
     <%
         if (request.getMethod().equalsIgnoreCase("post")) {

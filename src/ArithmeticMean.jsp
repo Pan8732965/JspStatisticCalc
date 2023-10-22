@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="java.util.Arrays" %>
+<%@ page import="java.text.DecimalFormat" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +40,7 @@
         <label for="num5">數據5</label>
         <input type="text" name="num5" required>
         <br>
+        <br>
         <input type="submit" value="計算平均值" name="operation">
     </form>
 
@@ -46,19 +50,23 @@
     <%
         // Check if the form is submitted
         if (request.getMethod().equalsIgnoreCase("post")) {
-            int num1 = Integer.parseInt(request.getParameter("num1"));
-            int num2 = Integer.parseInt(request.getParameter("num2"));
-            int num3 = Integer.parseInt(request.getParameter("num3"));
-            int num4 = Integer.parseInt(request.getParameter("num4"));
-            int num5 = Integer.parseInt(request.getParameter("num5"));
 
+            double numbers[] = new double[5];
+            numbers[0] = Double.parseDouble(request.getParameter("num1"));
+            numbers[1] = Double.parseDouble(request.getParameter("num2"));
+            numbers[2] = Double.parseDouble(request.getParameter("num3"));
+            numbers[3] = Double.parseDouble(request.getParameter("num4"));
+            numbers[4] = Double.parseDouble(request.getParameter("num5"));
             String operation = request.getParameter("operation");
 
-            double result = 0;
-            result = (num1 + num2 + num3 + num4 + num5) / 5.0;
-        
+            Arrays.sort(numbers);
+            double average = (numbers[0] + numbers[1] + numbers[2] + numbers[3]+ numbers[4])/5 ;
+
+            DecimalFormat decimalFormat = new DecimalFormat("#.####");
+            String OutputAverage = decimalFormat.format(average);
     %>
-            <h3>平均值： <%= result %></h3>
+            <h3>原始數據： <%= numbers[0] %>, <%= numbers[1] %>, <%= numbers[2] %>, <%= numbers[3] %>, <%= numbers[4] %> </h3>
+            <h3>平均值： <%= OutputAverage %></h3>
     <%
         }
     %>

@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="java.util.Arrays" %>
+<%@ page import="java.text.DecimalFormat" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,6 +40,7 @@
         <label for="num5">數據5</label>
         <input type="text" name="num5" required>
         <br>
+        <br>
         <input type="submit" value="計算標準差" name="operation">
     </form>
 
@@ -68,14 +71,20 @@
             double populationVariance = b / 5;
             double sampleStandardDeviation = Math.sqrt(sampleVariance);
             double PopulationStandardDeviation = Math.sqrt(populationVariance);
+
+            DecimalFormat decimalFormat = new DecimalFormat("#.####");
+            String  OutputPopulationStandardDeviation = decimalFormat.format(PopulationStandardDeviation);
+            String  OutputSampleStandardDeviation = decimalFormat.format(sampleStandardDeviation);
+            String  OutputPopulationVariance = decimalFormat.format(populationVariance);
+            String  OutputSampleVariance = decimalFormat.format(sampleVariance);
             
         
     %>
             <h3>原始數據： <%= numbers[0] %>, <%= numbers[1] %>, <%= numbers[2] %>, <%= numbers[3] %>, <%= numbers[4] %> </h3>
-            <h3>母體標準差（σ）： <%= PopulationStandardDeviation %> </h3>
-            <h3>樣本標準差（s）： <%= sampleStandardDeviation %> </h3>
-            <h3>母體變異數（σ2）： <%= populationVariance %> </h3>
-            <h3>樣本變異數（s2）： <%= sampleVariance %> </h3>
+            <h3>母體標準差（σ）： <%= OutputPopulationStandardDeviation %> </h3>
+            <h3>樣本標準差（s）： <%= OutputSampleStandardDeviation %> </h3>
+            <h3>母體變異數（σ2）： <%= OutputPopulationVariance %> </h3>
+            <h3>樣本變異數（s2）： <%= OutputSampleVariance %> </h3>
             
     <%
         }

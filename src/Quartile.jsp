@@ -38,6 +38,7 @@
         <label for="num5">數據5</label>
         <input type="text" name="num5" required>
         <br>
+        <br>
         <input type="submit" value="計算四分位數" name="operation">
     </form>
 

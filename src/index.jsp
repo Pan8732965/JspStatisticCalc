@@ -112,17 +112,10 @@
         </tr>
         <tr>
             <td>
-                <a href="Cov.jsp" target="_self">樣本之共變異數(COV)</a>
+                <a href="CovAndr.jsp" target="_self">樣本之共變異數(COV) / 相關係數(r) </a>
             </td>
             
         </tr>
-        <tr>
-            <td>
-                <a href="r.jsp" target="_self">相關係數(r)</a>
-            </td>
-            
-        </tr>
-
         <tr>
             <td>
                 <a href="chebyshev.jsp" target="_self">契理雪夫定理 - 資料分配預測</a>

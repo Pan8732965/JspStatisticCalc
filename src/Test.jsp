@@ -1,28 +1,37 @@
+<%@ page import="java.util.Arrays" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="java.text.Decimal
- %>
 <!DOCTYPE html>
 <html lang="en">
 
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>小數點取位示例</title>
+    <title>函式示例</title>
 </head>
-
 <body>
 
-    <%
-        double originalNumber = 15.6789;
+    <h2>函式示例</h2>
 
-        // 使用 DecimalFormat 取得小數點後兩位
-        DecimalFormat decimal
-DecimalFormat decimalFormat = new DecimalFormat("#.##");
-        String formattedNumber = decimalFormat.format(originalNumber);
+    <%! 
+    // 假設這是一個計算平均值的函式
+    private double calculateAverage(double[] numbers) {
+        double sum = 0;
+        for (double number : numbers) {
+            sum += number;
+        }
+        return sum / numbers.length;
+    }
+    %>
+    
+    <% 
+        // 在這裡使用函式
+        double[] data = {1.0, 2.0, 3.0, 4.0, 5.0};
 
-        out.print("<p>原始數字：" + originalNumber + "</p>");
-        out.print("<p>小數點取位：" + formattedNumber + "</p>");
+        // 呼叫 calculateAverage 函式
+        double average = calculateAverage(data);
     %>
 
-</body>
+    <p>數據: <%= Arrays.toString(data) %></p>
+    <p>平均值: <%= average %></p>
 
+</body>
 </html>

@@ -1,4 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.Arrays" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,30 +41,33 @@
         <label for="num5">數據5</label>
         <input type="text" name="num5" required>
         <br>
+        <br>
         <input type="submit" value="找出眾數" name="operation">
     </form>
 
     
 
     <!-- JSP Code Area -->
-    <%!
-        int findMode(int[] arr) {
-            
-            java.util.Map<Integer, Integer> frequencyMap = new java.util.HashMap<>();
 
-            // to calculate the frequency of the appeared value. 
-            for (int num : arr) {
-                requencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+    <%!
+        // 尋找眾數的函式
+        private double findMode(double[] numbers) {
+            Arrays.sort(numbers);
+            Map<Double, Integer> frequencyMap = new HashMap<>();
+
+            // 計算每個數字的出現頻率
+            for (double number : numbers) {
+                frequencyMap.put(number, frequencyMap.getOrDefault(number, 0) + 1);
             }
 
-            // to find the most frqurntly appeared value
+            // 找出最大頻率的數字
+            double mode = Double.NaN; // 如果有多個眾數，預設為 NaN
             int maxFrequency = 0;
-            int mode = 0;
 
-            for (java.util.Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()){
+            for (Map.Entry<Double, Integer> entry : frequencyMap.entrySet()) {
                 if (entry.getValue() > maxFrequency) {
-                maxFrequency = entry.getValue();
-                mode = entry.getKey();
+                    maxFrequency = entry.getValue();
+                    mode = entry.getKey();
                 }
             }
 
@@ -79,10 +86,11 @@
             numbers[3] = Double.parseDouble(request.getParameter("num4"));
             numbers[4] = Double.parseDouble(request.getParameter("num5"));
 
-            Arrays.sort(numbers);
+            //Arrays.sort(numbers);
             double mode = findMode(numbers);
     %>
-            <p>眾數： <%= mode %></p>
+            <h3>原始數據： <%= numbers[0] %>, <%= numbers[1] %>, <%= numbers[2] %>, <%= numbers[3] %>, <%= numbers[4] %> </h3>
+            <h3>眾數： <%= mode %></h3>
     <%
         }
     %>
