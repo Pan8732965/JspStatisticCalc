@@ -125,6 +125,7 @@
     </table>
 
     <img src="statistics.jpg" alt="Statistics" class="my-image">
+    <p> <a href="https://youtu.be/ogeGJS0GEF4?si=K72oD2mPNEQe4dD7" target="_blank">✨ 關於統計學有趣的影片 ✨</a>。</p>
     <p> 有疑問請來信：</p>
     潘驄杰  <a href= "mailto:smartjay1206@gmail.com">smartjay1206@gmail.com</a>
 
